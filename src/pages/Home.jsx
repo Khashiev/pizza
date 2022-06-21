@@ -16,10 +16,11 @@ import Skeleton from '../components/PizzaBlock/Skeleton';
           setItems(arr);
           setIsLoading(false);
         });
+        window.scrollTo(0, 0)
     }, []);
 
   return (
-    <>
+    <div className="container">
         <div className="content__top">
             <Categories />
             <Sort />
@@ -30,7 +31,7 @@ import Skeleton from '../components/PizzaBlock/Skeleton';
               ? [...new Array(6)].map((_, i) => <Skeleton key={i} />)
               : items.map((pizza) => <PizzaBlock key={pizza.id} {...pizza} />)}
           </div>
-    </>
+    </div>
   )
 }
 
